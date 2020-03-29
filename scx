@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+void main() => runApp(MaterialApp(
+  home: Scaffold(
+    appBar: AppBar(
+      title: Text('MAPS'),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.home),
+          onPressed: null)
+      ],
+    ),
+    body: MyMap(),
+    )
+));
+
+class MyMap extends StatefulWidget {
+  @override
+  _MyMapState createState() {
+    // TODO: implement createState
+    return _MyMapState();
+  }
+}
+
+class _MyMapState extends State<MyMap> {
+  GoogleMapController mapCtrl;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return GoogleMap(
+      initialCameraPosition: CameraPosition(target: LatLng(13.8703, 100.5508),
+      zoom: 16
+      ),
+      onMapCreated: (GoogleMapController ctrl){}
+    );
+  }
+}
